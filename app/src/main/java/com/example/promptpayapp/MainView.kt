@@ -6,6 +6,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -82,6 +83,8 @@ fun MainView(voiceToTextParser: VoiceToTextParser, modifier: Modifier = Modifier
                         Text(text = state.spokenText.ifEmpty { "Click on the mic to record Audio" })
                     }
                 }
+                Spacer(modifier = Modifier.padding(16.dp))
+                Text(text = state.command.ifEmpty { "No Commands made yet" })
             }
         }
 
