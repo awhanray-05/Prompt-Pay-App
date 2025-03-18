@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "691192883196",
+    "project_id": "prompt-pay-app",
+    "storage_bucket": "prompt-pay-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691192883196:android:ffa538513bda454e4db479",
+        "android_client_info": {
+          "package_name": "com.example.promptpayapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc9eXFeEUTqFBV1sYywWrRoJRtsdWRNgg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

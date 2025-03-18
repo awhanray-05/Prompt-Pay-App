@@ -9,6 +9,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
@@ -33,6 +34,20 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+// 🌙 Dark Theme Color Palette
+private val DarkColorPalette = darkColorScheme(
+    primary = Color(0xFF212121),  // Dark Gray
+    secondary = Color(0xFF424242), // Medium Gray
+    background = Color(0xFF0A192F), // Almost Black with a Blue Tint
+    surface = Color(0xFF112240),  // Dark Blue Surface for UI Elements
+    onPrimary = Color(0xFFE0E0E0),  // Light text on dark
+    onSecondary = Color(0xFFBBE1FA), // Soft Blue Accent for Highlights
+    onBackground = Color(0xFFDFE7F2), // Light Blue-Gray for Readable Text
+    onSurface = Color(0xFFEAEAEA),  // Very Light Gray for Text on Surfaces
+    primaryContainer = Color(0xFF233554), // Slightly Lighter Blue for UI Elements
+    secondaryContainer = Color(0xFF30475E) // Muted Dark Blue for Subtle Accents
+)
+
 @Composable
 fun PromptPayAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -46,12 +61,13 @@ fun PromptPayAppTheme(
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
+        darkTheme -> DarkColorPalette // Your Dark Color Theme
         else -> LightColorScheme
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
+//        colorScheme = colorScheme,]
+        colorScheme = DarkColorPalette,
         typography = Typography,
         content = content
     )

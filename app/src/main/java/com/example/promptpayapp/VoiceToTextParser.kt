@@ -102,55 +102,18 @@ class VoiceToTextParser(
                     )
                 }
             }
-
-        checkCommands(spokenText = _state.value.spokenText)
     }
 
     override fun onPartialResults(p0: Bundle?) = Unit
 
     override fun onEvent(p0: Int, p1: Bundle?) = Unit
 
-    private fun checkCommands(spokenText: String) {
-        if (
-            spokenText.contains("fetch", true) ||
-            spokenText.contains("show", true) ||
-            spokenText.contains("check", true) ||
-            spokenText.contains("balance", true)
-        ) {
-            _state.update {
-                it.copy(
-                    command = "Your current Balance is being fetched..."
-                )
-            }
-        } else if (
-            spokenText.contains("pay", true) ||
-            spokenText.contains("send", true) ||
-            spokenText.contains("transfer", true) ||
-            spokenText.contains("debit", true)
-        ) {
-            _state.update {
-                it.copy(
-                    command = "Debit transaction is being made..."
-                )
-            }
-        } else if(
-            spokenText.contains("credit", true) ||
-            spokenText.contains("deposit", true) ||
-            spokenText.contains("add", true)
-        ) {
-            _state.update {
-                it.copy(
-                    command = "Credit transaction is being made..."
-                )
-            }
-        }
-    }
+
 
 }
 
 data class VoiceToTextParserState(
     val spokenText: String = "",
     val isSpeaking: Boolean = false,
-    val error: String? = null,
-    val command: String = ""
+    val error: String? = null
 )
